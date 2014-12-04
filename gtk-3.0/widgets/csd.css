@@ -4,16 +4,16 @@
 .titlebar {
     border-radius: 0 0 0 0;
     background-image: none;
-    background-color: @menubar_bg_color;
-    color: @menubar_fg_color;
+    background-color: @dark_color;
+    color: @dark_color;
     text-shadow: none;
 }
 
 .titlebar:insensitive {
     border-radius: 0 0 0 0;
     background-image: none;
-    background-color: @menubar_bg_color;
-    color: @menubar_fg_color;
+    background-color: @light_color;
+    color: @light_color;
     text-shadow: none;
 }
 
@@ -32,15 +32,15 @@
 
 .titlebar:backdrop {
     background-image: none;
-    background-color: @menubar_bg_color;
-    color: mix(@menubar_fg_color, @wm_bg, 0.4);
+    background-color: @dark_color;
+    color: mix(@dark_color, @dark_color, 0.4);
     text-shadow: none;
 }
 
 .titlebar:backdrop:insensitive {
     background-image: none;
-    background-color: @menubar_bg_color;
-    color: mix(@menubar_fg_color, @wm_bg, 0.4);
+    background-color: @light_color;
+    color: mix(@light_color, @light_color, 0.4);
     text-shadow: none;
 }
 
@@ -48,7 +48,7 @@
     padding: 6px 6px;
     border-style: none;
     background: none;
-    color: @menubar_fg_color;
+    color: @dark_color;
     icon-shadow: none;
 }
 
@@ -83,35 +83,35 @@
 
 .titlebar .titlebutton:backdrop {
     background-image: none;
-    color: shade(@menubar_fg_color, 1.75);
+    color: shade(@dark_color, 1.75);
     icon-shadow: none;
 }
 
 .titlebar .button {
     padding: 6px 6px;
-    background-color: @wm_bg; /*makes it practically transparent*/
+    background-color: @dark_color; /*makes it practically transparent*/
     color: @wm_title_focused;
 }
 
 .titlebar .button:hover {
-    background-color: @wm_bg;
+    background-color: @dark_color;
     color: @menu_selected_fg_color;
 }
 
 .titlebar .button:active:hover {
-    background-color: @wm_bg;
+    background-color: @dark_color;
     color: shade(@menu_selected_fg_color, 0.87);
 }
 
 .titlebar .button:active,
 .titlebar .button:checked {
-    background-color: @wm_bg;
+    background-color: @dark_color;
     color: @menu_selected_fg_color;
 }
 
 .titlebar .separator {
-    border-color: shade(@menubar_bg_color, 0.87);
-    color: shade(@menubar_bg_color, 0.87);
+    border-color: shade(@dark_color, 0.87);
+    color: shade(@dark_color, 0.87);
 }
 
 .window-frame {
@@ -128,5 +128,5 @@
 
 .window-frame:backdrop {
     box-shadow: 0 3px 5px 1px alpha(black, 0.5),
-                0 0 0 1px mix(shade(@menubar_bg_color, 0.7), @menubar_fg_color, 0.12);
+                0 0 0 1px mix(shade(@dark_color, 0.7), @dark_color, 0.12);
 }
