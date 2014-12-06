@@ -1,6 +1,4 @@
-iris
+Ozon GTK theme
 ====
 
-A simple, flat and bold Gtk theme.
-
-This repo was made to host the dark version of the Iris theme. The repository for Iris Light is at github.com/xyl0n/iris-light
+The default GTK theme to be used with Ozon OS. The current theme is a modified version of [Iris Dark](https://github.com/xyl0n/dark) but this will probably change in future versions.
