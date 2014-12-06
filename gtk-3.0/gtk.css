@@ -2,7 +2,7 @@
 @define-color bg_color #fafafa;
 @define-color fg_color #555555;
 @define-color base_color #fefefe;
-@define-color light_color #7a8593;
+@define-color light_color #798593;
 @define-color dark_color #63717e;
 @define-color text_color #333333;
 @define-color selected_bg_color transparent;
@@ -49,7 +49,7 @@
 @define-color menu_fg_color @theme_bg_color;
 @define-color panel_bg_color #222222;
 @define-color panel_fg_color #f2f2f2;
-@define-color menu_selected_fg_color #eeeeee;
+@define-color menu_selected_fg_color #f788ff;
 
 /* osd */
 @define-color osd_base #fafafa;
@@ -63,11 +63,11 @@
 @define-color wm_title_focused @menubar_fg_color;
 @define-color wm_title_unfocused alpha(@menubar_fg_color, 0.75);
 @define-color wm_icons_focused @theme_fg_color;
-@define-color wm_icons_focused_prelight shade(@theme_selected_bg_color, 1.15);
-@define-color wm_icons_focused_pressed @theme_selected_bg_color;
+@define-color wm_icons_focused_prelight shade(@menu_selected_bg_color, 1.15);
+@define-color wm_icons_focused_pressed @menu_selected_bg_color;
 @define-color wm_icons_unfocused alpha(@theme_fg_color, 0.95);
-@define-color wm_icons_unfocused_prelight shade(@theme_selected_bg_color, 1.15);
-@define-color wm_icons_unfocused_pressed @theme_selected_bg_color;
+@define-color wm_icons_unfocused_prelight shade(@menu_selected_bg_color, 1.15);
+@define-color wm_icons_unfocused_pressed @menu_selected_bg_color;
 
 @import url("gtk-widgets.css");
 @import url("gtk-widgets-assets.css");
