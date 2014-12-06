@@ -19,12 +19,12 @@
 <constant name="C_title_focused_hilight_dark" value="gtk:custom(wm_bg,gtk:fg[NORMAL])" />
 <constant name="C_title_unfocused" value="gtk:custom(wm_title_unfocused,gtk:fg[INSENSITIVE])" />
 <!-- color of the button icons -->
-<constant name="C_icons_focused" value="gtk:custom(wm_title_focused,gtk:fg[NORMAL])" />
-<constant name="C_icons_pressed" value="gtk:text[SELECTED]" />
-<constant name="C_max_prelight" value="blend/#fa4a3e/gtk:bg[NORMAL]/0.0" />
-<constant name="C_icons_unfocused" value="blend/gtk:text[NORMAL]/gtk:bg[NORMAL]/0.5" />
-<constant name="C_icons_unfocused_prelight" value="blend/gtk:bg[NORMAL]/gtk:fg[NORMAL]/0.3" />
-<constant name="C_icons_unfocused_pressed" value="blend/#000000/gtk:bg[NORMAL]/0.7" />
+<constant name="C_icons_focused" value="gtk:custom(wm_icons_focused,gtk:fg[NORMAL])" />
+<constant name="C_icons_pressed" value="gtk:custom(wm_icons_focused_pressed,gtk:fg[NORMAL])" />
+<constant name="C_max_prelight" value="gtk:custom(wm_icons_focused_prelight,gtk:fg[NORMAL])" />
+<constant name="C_icons_unfocused" value="gtk:custom(wm_icons_unfocused,gtk:fg[NORMAL])" />
+<constant name="C_icons_unfocused_prelight" value="gtk:custom(wm_icons_unfocused_prelight,gtk:fg[NORMAL])" />
+<constant name="C_icons_unfocused_pressed" value="gtk:custom(wm_icons_unfocused_pressed,gtk:fg[NORMAL])" />
 <constant name="C_icons_shadow" value="gtk:custom(wm_title_shadow,gtk:base[NORMAL])" />
 <constant name="C_separator" value="blend/#000000/gtk:bg[NORMAL]/0.9" />
 <constant name="D_icons_unfocused_offset" value="0" /> <!-- offset of the unfocused icons -->
@@ -224,28 +224,26 @@
 </draw_ops>
 
 <draw_ops name="rounded_border_focused">
-	<line color="C_border_focused" x1="4" y1="0" x2="width-5" y2="0" />
+	<!-- <line color="C_border_focused" x1="4" y1="0" x2="width-5" y2="0" />
 	<line color="C_border_focused" x1="0" y1="height-1" x2="width-1" y2="height-1" />
 	<line color="C_border_focused" x1="0" y1="4" x2="0" y2="height-2" />
 	<line color="C_border_focused" x1="width-1" y1="4" x2="width-1" y2="height-2" />
 	<arc color="C_border_focused" x="0" y="0" width="9" height="9"  start_angle="270" extent_angle="90" />
 	<arc color="C_border_focused" x="width-10" y="0" width="9" height="9"  start_angle="0" extent_angle="90" />
-	<!-- double arcs for darker borders -->
 	<arc color="C_border_focused" x="0" y="0" width="9" height="9"  start_angle="270" extent_angle="90" />
-	<arc color="C_border_focused" x="width-10" y="0" width="9" height="9"  start_angle="0" extent_angle="90" />
+	<arc color="C_border_focused" x="width-10" y="0" width="9" height="9"  start_angle="0" extent_angle="90" /> -->
 </draw_ops>
 
 <draw_ops name="rounded_border_unfocused">
-	<line color="C_border_unfocused" x1="4" y1="0" x2="width-5" y2="0" />
+	<!-- <line color="C_border_unfocused" x1="4" y1="0" x2="width-5" y2="0" />
 	<line color="C_border_unfocused" x1="0" y1="height-1" x2="width-1" y2="height-1" />
 	<line color="C_border_unfocused" x1="0" y1="4" x2="0" y2="height-2" />
 	<line color="C_border_unfocused" x1="width-1" y1="4" x2="width-1" y2="height-2" />
 	<arc color="C_border_unfocused" x="0" y="0" width="9" height="9"  start_angle="270" extent_angle="90" />
 	<arc color="C_border_unfocused" x="width-10" y="0" width="9" height="9"  start_angle="0" extent_angle="90" />
 
-	<!-- double arcs for darker borders -->
 	<arc color="C_border_unfocused" x="0" y="0" width="9" height="9"  start_angle="270" extent_angle="90" />
-	<arc color="C_border_unfocused" x="width-10" y="0" width="9" height="9"  start_angle="0" extent_angle="90" />
+	<arc color="C_border_unfocused" x="width-10" y="0" width="9" height="9"  start_angle="0" extent_angle="90" /> -->
 </draw_ops>
 
 
@@ -298,54 +296,54 @@
 	<line
 		x1="(width-width%3)/3+D_icons_shrink-D_icons_grow" y1="(height-height%3)/3+D_icons_shrink-D_icons_grow" 
 		x2="width-(width-width%3)/3-1-D_icons_shrink+D_icons_grow" y2="height-(height-height%3)/3-1-D_icons_shrink+D_icons_grow" 
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line
 		x1="(width-width%3)/3+1+D_icons_shrink-D_icons_grow" y1="(height-height%3)/3+D_icons_shrink-D_icons_grow"
 		x2="width-(width-width%3)/3-1-D_icons_shrink+D_icons_grow" y2="height-(height-height%3)/3-2-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line 
 		x1="(width-width%3)/3+D_icons_shrink-D_icons_grow" y1="(height-height%3)/3+1+D_icons_shrink-D_icons_grow"
 		x2="width-(width-width%3)/3-2-D_icons_shrink+D_icons_grow" y2="height-(height-height%3)/3-1-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line 
 		x1="width-(width-width%3)/3-1-D_icons_shrink+D_icons_grow" y1="(height-height%3)/3+D_icons_shrink-D_icons_grow"
 		x2="(width-width%3)/3+D_icons_shrink-D_icons_grow" y2="height-(height-height%3)/3-1-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line 
 		x1="width-(width-width%3)/3-2-D_icons_shrink+D_icons_grow" y1="(height-height%3)/3+D_icons_shrink-D_icons_grow"
 		x2="(width-width%3)/3+D_icons_shrink-D_icons_grow" y2="height-(height-height%3)/3-2-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line 
 		x1="width-(width-width%3)/3-1-D_icons_shrink+D_icons_grow" y1="(height-height%3)/3+1+D_icons_shrink-D_icons_grow"
 		x2="(width-width%3)/3+1+D_icons_shrink-D_icons_grow" y2="height-(height-height%3)/3-1-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 </draw_ops>
 
 <draw_ops name="close_glyph_prelight">
 	<line
 		x1="(width-width%3)/3+D_icons_shrink-D_icons_grow" y1="(height-height%3)/3+D_icons_shrink-D_icons_grow" 
 		x2="width-(width-width%3)/3-1-D_icons_shrink+D_icons_grow" y2="height-(height-height%3)/3-1-D_icons_shrink+D_icons_grow" 
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line
 		x1="(width-width%3)/3+1+D_icons_shrink-D_icons_grow" y1="(height-height%3)/3+D_icons_shrink-D_icons_grow"
 		x2="width-(width-width%3)/3-1-D_icons_shrink+D_icons_grow" y2="height-(height-height%3)/3-2-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line 
 		x1="(width-width%3)/3+D_icons_shrink-D_icons_grow" y1="(height-height%3)/3+1+D_icons_shrink-D_icons_grow"
 		x2="width-(width-width%3)/3-2-D_icons_shrink+D_icons_grow" y2="height-(height-height%3)/3-1-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line 
 		x1="width-(width-width%3)/3-1-D_icons_shrink+D_icons_grow" y1="(height-height%3)/3+D_icons_shrink-D_icons_grow"
 		x2="(width-width%3)/3+D_icons_shrink-D_icons_grow" y2="height-(height-height%3)/3-1-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line 
 		x1="width-(width-width%3)/3-2-D_icons_shrink+D_icons_grow" y1="(height-height%3)/3+D_icons_shrink-D_icons_grow"
 		x2="(width-width%3)/3+D_icons_shrink-D_icons_grow" y2="height-(height-height%3)/3-2-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 	<line 
 		x1="width-(width-width%3)/3-1-D_icons_shrink+D_icons_grow" y1="(height-height%3)/3+1+D_icons_shrink-D_icons_grow"
 		x2="(width-width%3)/3+1+D_icons_shrink-D_icons_grow" y2="height-(height-height%3)/3-1-D_icons_shrink+D_icons_grow"
-		color="gtk:text[SELECTED]" />
+		color="C_max_prelight" />
 </draw_ops>
 
 <draw_ops name="close_glyph_focused">

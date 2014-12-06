@@ -135,8 +135,8 @@
 }
 
 .titlebar .separator {
-    border-color: shade(@dark_color, 0.87);
-    color: shade(@dark_color, 0.87);
+    border-color: #cccccc;
+    color: #cccccc;
 }
 
 .window-frame {
@@ -146,12 +146,10 @@
 
     this is used for the resize cursor area */
 
-    box-shadow: 0 3px 5px 1px alpha(black, 0.7),
-                0 0 0 1px mix(shade(@dark_color, 0.7), @dark_color, 0.12);
+    box-shadow: 0 5px 7px 1px alpha(#999, 0.7);
     margin: 10px;
 }
 
 .window-frame:backdrop {
-    box-shadow: 0 3px 5px 1px alpha(black, 0.7),
-                0 0 0 1px mix(shade(@dark_color, 0.7), @dark_color, 0.12);
+    box-shadow: 0 5px 7px 1px alpha(#999, 0.7);
 }

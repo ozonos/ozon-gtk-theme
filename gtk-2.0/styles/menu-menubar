@@ -3,14 +3,14 @@ style "menu"="default"
 xthickness=0
 ythickness=0
 
-  bg[NORMAL] = @text_color
+  bg[NORMAL] = @bg_color
 
   engine "pixmap"
   {
     image
     {
       function			= BOX
-   #   recolorable    	= TRUE
+      recolorable    	= TRUE
       detail				= "menu"
       file				= "Menu-Menubar/menu.png"
       border			= { 1, 1, 1, 1 }
@@ -24,11 +24,11 @@ style "menuitem"
  xthickness				= 0
  ythickness            			= 4
  fg[NORMAL] = @bg_color
- text[NORMAL] = @bg_color
-	fg[PRELIGHT] = "#f65c6a"
-	fg[SELECTED] = "#f65c6a"
-	text[SELECTED] = "#f65c6a"
-	text[PRELIGHT]	= "#f65c6a"
+ text[NORMAL] = @text_color
+	fg[PRELIGHT] = @selected_bg_color
+	fg[SELECTED] = @selected_bg_color
+	text[SELECTED] = @selected_bg_color
+	text[PRELIGHT]	= @selected_bg_color
    engine "pixmap"
   {
     image
@@ -151,14 +151,14 @@ style "menubar-item"
 
 style "chrome_menu"
 {
-        bg[NORMAL] = @text_color
+        bg[NORMAL] = @bg_color
 }
 
 style "chrome_menu_item"
 {
-        bg[NORMAL] = @text_color
+        bg[NORMAL] = @bg_color
         fg[NORMAL] = @bg_color
-        bg[SELECTED] = @text_color
+        bg[SELECTED] = "transparent"
         bg[INSENSITIVE] = shade (1.08, @text_color)
         fg[SELECTED] = @bg_color
         fg[INSENSITIVE] = shade (1.08, @text_color)
