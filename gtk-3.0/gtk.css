@@ -4,7 +4,7 @@
 @define-color base_color #fefefe;
 @define-color light_color #e3e3e3;
 /* #7a8593 #6a7583 */
-@define-color dark_color #d6d6d6;
+@define-color dark_color #63717e;
 @define-color text_color #606060;
 @define-color light_text_color #c3c3c3;
 @define-color selected_bg_color transparent;
@@ -62,13 +62,13 @@
 
 /* window manager colors */
 @define-color wm_bg @dark_color;
-@define-color wm_border_focused @dark_color;
-@define-color wm_border_unfocused shade(@dark_color, 1.05);
-@define-color wm_title_focused @text_color;
+@define-color wm_border_focused @light_color;
+@define-color wm_border_unfocused @light_color;
+@define-color wm_title_focused #ffffff;
 @define-color wm_title_unfocused alpha(@text_color, 0.75);
 @define-color wm_icons_focused @theme_fg_color;
-@define-color wm_icons_focused_prelight @light_selected;
-@define-color wm_icons_focused_pressed @light_selected;
+@define-color wm_icons_focused_prelight #ff90ff;
+@define-color wm_icons_focused_pressed #ff90ff;
 @define-color wm_icons_unfocused alpha(@text_color, 0.95);
 @define-color wm_icons_unfocused_prelight @light_selected;
 @define-color wm_icons_unfocused_pressed @light_selected;

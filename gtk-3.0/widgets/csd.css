@@ -5,7 +5,7 @@
     border-radius: 0 0 0 0;
     background-image: none;
     background-color: @dark_color;
-    color: @text_color;
+    color: #ffffff;
     text-shadow: none;
 }
 
@@ -26,11 +26,19 @@
     box-shadow: none;
 }
 
+.titlebar {
+    color: white;
+}
+
+.titlebar .title, .titlebar .subtitle {
+    color: white;
+}
+
 .titlebar .title {
     font: bold;
 }
 
-.titlebar:insensitive .title, .titlebar:backdrop .title {
+.titlebar:insensitive .title, .titlebar:backdrop .title, .titlebar:insensitive .subtitle, .titlebar:backdrop .subtitle {
     color: @wm_title_unfocused;
 }
 
@@ -52,7 +60,7 @@
     padding: 6px 6px;
     border-style: none;
     background: none;
-    color: @text_color;
+    color: #ffffff;
     icon-shadow: none;
 }
 
@@ -87,14 +95,20 @@
 
 .titlebar .titlebutton:backdrop {
     background-image: none;
-    color: @light_text_color;
+    color: @wm_icons_unfocused;
+    icon-shadow: none;
+}
+
+.titlebar .button:backdrop {
+    background-image: none;
+    color: @wm_icons_unfocused;
     icon-shadow: none;
 }
 
 .titlebar .button {
     padding: 6px 6px;
     background-color: transparent; /*makes it practically transparent*/
-    color: @wm_icons_focused;
+    color: #ffffff;
 }
 
 .titlebar .button:hover {
@@ -107,10 +121,17 @@
     color: shade(@wm_icons_focused_prelight, 0.87);
 }
 
+.titlebar:backdrop .button:active,
+.titlebar:backdrop .button:checked {
+    background-color: transparent;
+    color: @menu_selected_fg_color;
+}
+
+
 .titlebar .button:active,
 .titlebar .button:checked {
     background-color: transparent;
-    color: @menu_selected_fg_color;
+    color: @wm_icons_focused_prelight;
 }
 
 .titlebar .separator {
