@@ -1,0 +1,327 @@
+/*********
+ ! Buttons
+**********/
+
+@include exports("button_extends") {
+	%button {
+		padding: ($spacing - 1px) ($spacing + 1px);
+		border-width: 1px;
+		border-style: solid;
+		border-radius: $roundness;
+		transition: 300ms ease;
+		outline-color: transparent;
+
+		-GtkWidget-focus-padding: 1;
+		-GtkWidget-focus-line-width: 0;
+
+        &:focus, &:hover, &:active { transition: none; }
+	}
+
+	%linked_middle {
+		border-radius: 0;
+		border-left-style: none;
+		border-right-style: solid;
+
+		&:dir(rtl) {
+			border-radius: 0; // needed when including %linked_middle:dir(rtl)
+			border-right-style: none;
+			border-left-style: solid
+		}
+	}
+
+	%linked_button {
+		border-width: 1px;
+		border-style: solid;
+		border-radius: 0;
+		border-right-style: none;
+		border-left-style: none;
+
+		&:first-child {
+			border-width: 1px;
+			border-radius: $roundness;
+			border-left-style: solid;
+			border-right-style: none;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+
+			&:dir(rtl) {
+				border-left-style: none;
+				border-right-style: solid;
+			}
+		}
+
+		&:last-child {
+			border-width: 1px;
+			border-radius: $roundness;
+			border-left-style: none;
+			border-right-style: solid;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+
+			&:dir(rtl) {
+				border-left-style: solid;
+				border-right-style: none;
+			}
+		}
+
+		&:only-child, &:first-child:only-child {
+			border-width: 1px;
+			border-style: solid;
+			border-radius: $roundness;
+		}
+	}
+}
+
+@mixin linked_button($bg) {
+	@extend %linked_button;
+
+	box-shadow: inset -1px 0 shade($bg, 0.95),
+				0 1px 2px -1px alpha($dark_shadow, .3);
+
+	&:focus, &:hover {
+		box-shadow: inset -1px 0 border_focus(shade($bg, 1.4)),
+					0 1px 2px -1px alpha($dark_shadow, .5);
+	}
+
+	&:active, &:active:hover,
+	&:active:focus, &:active:hover:focus,
+	&:checked, &:checked:hover,
+	&:checked:focus, &:checked:hover:focus {
+		box-shadow: inset -1px 0 shade($bg, 0.85),
+					inset 1px 0 alpha($dark_shadow, .07),
+					inset 0 1px alpha($dark_shadow, .08),
+					inset 0 -1px alpha($dark_shadow, .05);
+	}
+
+	&:insensitive { box-shadow: inset -1px 0 shade($bg, 0.8); }
+
+	&:last-child, &:only-child,
+	&:insensitive:last-child, &:insensitive:only-child,
+	&:active:insensitive:last-child, &:active:insensitive:only-child,
+	&:checked:insensitive:last-child, &:checked:insensitive:only-child { box-shadow: none; }
+
+	&:active:last-child, &:active:only-child,
+	&:active:last-child:focus, &:active:only-child:focus,
+	&:active:last-child:hover, &:active:only-child:hover,
+	&:active:last-child:hover:focus, &:active:only-child:hover:focus,
+	&:checked:last-child, &:checked:only-child,
+	&:checked:last-child:focus, &:checked:only-child:focus,
+	&:checked:last-child:hover, &:checked:only-child:hover,
+	&:checked:last-child:hover:focus, &:checked:only-child:hover:focus {
+		box-shadow: inset 1px 0 alpha($dark_shadow, .07),
+					inset 0 1px alpha($dark_shadow, .08),
+					inset -1px 0 alpha($dark_shadow, .07);
+	}
+}
+
+@mixin button($bg, $fg) {
+	@include linear-gradient(shade($bg, 1.2));
+	@extend %button;
+
+	color: $fg;
+	box-shadow: 0 1px 2px -1px alpha($dark_shadow, .3);
+
+	&:insensitive {
+		@include linear-gradient(shade($bg, .95));
+
+		color: mix($bg, $fg, .5);
+		box-shadow: none;
+	}
+
+	&, &.flat {
+		@include border(shade($bg, 1.2));
+
+		&:focus, &:hover {
+			@include linear-gradient(shade($bg, 1.1));
+
+			box-shadow: 0 1px 3px -1px alpha($dark_shadow, .5);
+		}
+
+		&:checked, &:active {
+			@include linear-gradient(shade($bg, .95));
+
+			box-shadow: inset 1px 0 alpha($dark_shadow, .07),
+						inset 0 1px alpha($dark_shadow, .08),
+						inset -1px 0 alpha($dark_shadow, .07),
+						inset 0 -1px alpha($dark_shadow, .05);
+		}
+
+		&:active:insensitive,
+		&:checked:insensitive {
+			@include linear-gradient(shade($bg, .8));
+
+			box-shadow: none;
+		}
+	}
+
+	&.flat {
+		color: inherit;
+		border-color: transparent;
+		background-color: transparent;
+		background-image: none;
+		box-shadow: none;
+	}
+
+	&.separator, .separator {
+		border: 1px solid currentColor;
+		color: shade($bg, ($contrast + .1));
+
+		&:insensitive { color: shade($bg, .85); }
+	}
+}
+
+@include exports("button") {
+	%close_button {
+		border: 1px solid transparent;
+		background-color: transparent;
+		background-image: none;
+		box-shadow: none;
+
+		&:focus, &:hover {
+			border: 1px solid alpha(black, 0.3);
+			background-color: alpha(white, 0.2);
+			background-image: none;
+			box-shadow: none;
+		}
+
+		&:active, &:checked, &:active:hover, &:checked:hover  {
+			border: 1px solid alpha(black, 0.3);
+			background-color: alpha(black, 0.1);
+			background-image: none;
+			box-shadow: none;
+		}
+	}
+
+	.button {
+		@include button($bg_color, $fg_color);
+
+		&.default { @include button($selected_bg_color, $selected_fg_color); }
+
+		&.linked, .linked & { @include linked_button(shade($bg_color, 1.2)); }
+
+		.spinbutton & {
+			color: mix($text_color, $base_color, 0.4);
+			padding: $spacing ($spacing * 2);
+			border: none;
+			border-radius: 0;
+			border-style: none;
+			background-color: transparent;
+			background-image: none;
+			box-shadow: inset 1px 0 shade($base_color, 0.9);
+
+			&:insensitive {
+				color: mix($text_color, $base_color, 0.7);
+				box-shadow: inset 1px 0 shade($base_color, 0.85);
+			}
+
+			&:active, &:checked, &:hover { color: $text_color; }
+
+			&:first-child {
+				border-radius: $roundness 0 0 $roundness;
+				box-shadow: none;
+			}
+
+			&:last-child { border-radius: 0 $roundness $roundness 0; }
+
+			&:dir(rtl) { box-shadow: inset -1px 0 shade($base_color, 0.9); }
+		}
+
+		.spinbutton.vertical & {
+			border: 1px solid shade($bg_color, 0.8);
+			border-radius: $roundness;
+			background-color: shade($bg_color, 1.08);
+			background-image: none;
+			color: $fg_color;
+			box-shadow: none;
+
+			&:hover {
+				border-color: shade($bg_color, 0.7);
+				background-color: shade($bg_color, 1.1);
+				background-image: none;
+			}
+
+			&:active, &:checked {
+				border-color: shade($bg_color, 0.8);
+				background-color: shade($bg_color, 0.95);
+				background-image: none;
+			}
+
+			&:active:hover, &:checked:hover {
+				border-color: shade($bg_color, 0.7);
+			}
+
+			&:focus, &:hover:focus, &:active:focus, &:active:hover:focus { border-color: shade($bg_color, 0.7); }
+
+			&:insensitive {
+				border-color: shade($bg_color, 0.85);
+				background-color: shade($bg_color, 0.9);
+				background-image: none;
+			}
+
+			&:first-child {
+				border-width: 1px;
+				border-bottom-width: 0;
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+
+			&:last-child {
+				border-width: 1px;
+				border-top-width: 0;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+			}
+		}
+
+		.spinbutton.vertical.entry {
+			border-width: 1px;
+			border-style: solid;
+			border-radius: 0;
+		}
+	}
+}
+
+
+/******************
+! ComboBoxes *
+*******************/
+
+@include exports("combobox") {
+	GtkComboBox {
+		> .button {
+			padding: ($spacing - 2px) ($spacing + 1px);
+
+			-GtkComboBox-arrow-scaling: 0.5;
+			-GtkComboBox-shadow-type: none;
+		}
+
+		&.combobox-entry {
+			.entry, .button { @extend %linked_button; }
+		}
+
+		.separator {
+			/* always disable separators */
+			-GtkWidget-wide-separators: true;
+			-GtkWidget-horizontal-separator: 0;
+			-GtkWidget-vertical-separator: 0;
+
+			border-style: none;
+		}
+	}
+
+	.linked > GtkComboBox {
+		> .button {
+			// the combo is a composite widget so the way we do button linked doesn't
+			// work, special case needed. See
+			// https://bugzilla.gnome.org/show_bug.cgi?id=733979
+			&:dir(ltr) { @extend %linked_middle; } // specificity bump
+			&:dir(rtl) { @extend %linked_middle:dir(rtl); }
+		}
+
+		&:first-child > .button { @extend %linked_button:first-child; }
+
+		&:last-child > .button { @extend %linked_button:last-child; }
+
+		&:only-child > .button { @extend %linked_button:only-child; }
+	}
+}

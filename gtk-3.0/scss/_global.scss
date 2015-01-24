@@ -1,0 +1,72 @@
+@import "functions";
+
+// default color scheme
+$bg_color: #f6f6f6;
+$fg_color: #555;
+$base_color: #fff;
+$text_color: #333;
+$selected_bg_color: #11aa89;
+$selected_fg_color: #fff;
+$tooltip_bg_color: #333;
+$tooltip_fg_color: #eee;
+
+// dark colors
+$dark_bg_color: #333;
+$dark_fg_color: #eee;
+
+// shadows
+$dark_shadow: #000;
+$light_shadow: #fff;
+
+// misc colors used by gtk+
+$info_fg_color: #3986ac;
+$info_bg_color: #d9edf7;
+$warning_fg_color: #c09853;
+$warning_bg_color: #fcf8e3;
+$question_fg_color: #d64937;
+$question_bg_color: #fce5d5;
+$error_fg_color: #b94a48;
+$error_bg_color: #f2dede;
+$link_color: #fc6f5d;
+$success_color: #53a93f;
+$warning_color: #f57900;
+$error_color: #cc0000;
+
+$toolbar_bg_color: $bg_color;
+$toolbar_fg_color: $fg_color;
+
+$titlebar_bg_color: $bg_color;
+$titlebar_fg_color: $fg_color;
+
+$menu_bg_color: $base_color;
+$menu_fg_color: $text_color;
+
+$menubar_bg_color: $dark_bg_color;
+$menubar_fg_color: $dark_fg_color;
+
+$panel_bg_color: $dark_bg_color;
+$panel_fg_color: $dark_fg_color;
+
+$osd_bg: $dark_bg_color;
+$osd_fg: $dark_fg_color;
+
+$lightdm_bg_color: $dark_bg_color;
+$lightdm_fg_color: $dark_fg_color;
+
+$wm_bg: $titlebar_bg_color;
+$wm_border_focused: mix(shade($titlebar_bg_color, 0.7), $titlebar_fg_color, 0.21);
+$wm_border_unfocused: mix(shade($titlebar_bg_color, 0.7), $titlebar_fg_color, 0.12);
+$wm_title_focused: mix($titlebar_fg_color, $titlebar_bg_color, 0.1);
+$wm_title_unfocused: mix($titlebar_fg_color, $titlebar_bg_color, 0.4);
+$wm_icons_focused: mix($titlebar_fg_color, $titlebar_bg_color, 0.1);
+$wm_icons_focused_prelight: $selected_bg_color;
+$wm_icons_focused_pressed: shade($selected_bg_color, 0.8);
+$wm_icons_unfocused: mix($titlebar_fg_color, $titlebar_bg_color, 0.4);
+$wm_icons_unfocused_prelight: $selected_bg_color;
+$wm_icons_unfocused_pressed: shade($selected_bg_color, 0.8);
+
+// widget styles
+$roundness: 3px;
+$spacing: 5px;
+$gradient: 0;
+$contrast: .8;

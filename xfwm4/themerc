@@ -1,17 +1,15 @@
 # Name: Numix xfwm4 theme
-# Author: Xylon <avlabs314@gmail.com>
+# Author: Satyajit Sahoo <satyajit.happy@gmail.com>
 # License: GPL-3.0+
 
-active_text_color=#2d2d2d	
-inactive_text_color=#d0d0d0
-active_color_1=#ffffff
-active_color_2=#ffffff
-button_offset=4
-button_spacing=4
-show_app_icon=false
+active_text_color=#dcdcdc
+inactive_text_color=#888888
+button_offset=3
+button_spacing=0
+show_app_icon=true
 full_width_title=true
-maximized_offset=4
-title_horizontal_offset=6
+maximized_offset=0
+title_horizontal_offset=3
 title_shadow_active=false
 title_shadow_inactive=false
 title_vertical_offset_active=0

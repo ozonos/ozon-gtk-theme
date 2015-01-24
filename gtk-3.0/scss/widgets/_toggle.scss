@@ -1,0 +1,104 @@
+/***********************
+ ! Check and Radio items
+************************/
+
+@mixin toggle($type) {
+	background-image: none;
+
+	-gtk-icon-source: url('../assets/#{$type}-unchecked.svg');
+
+	&:insensitive { -gtk-icon-source: url('../assets/#{$type}-unchecked-insensitive.svg'); }
+
+	&:checked, &:active {
+		-gtk-icon-source: url('../assets/#{$type}-checked.svg');
+
+		&:insensitive { -gtk-icon-source: url('../assets/#{$type}-checked-insensitive.svg'); }
+	}
+
+	&:inconsistent {
+		-gtk-icon-source: url('../assets/#{$type}-mixed.svg');
+
+		&:insensitive { -gtk-icon-source: url('../assets/#{$type}-mixed-insensitive.svg'); }
+	}
+
+	&.menuitem {
+		-gtk-icon-source: none;
+
+		&:insensitive { -gtk-icon-source: none; }
+
+		&:checked, &:active {
+			-gtk-icon-source: url('../assets/menuitem-#{$type}-checked.svg');
+
+			&:hover { -gtk-icon-source: url('../assets/menuitem-#{$type}-checked-hover.svg'); }
+
+			&:insensitive { -gtk-icon-source: url('../assets/menuitem-#{$type}-checked-insensitive.svg'); }
+		}
+
+		&:inconsistent {
+			-gtk-icon-source: url('../assets/menuitem-#{$type}-mixed.svg');
+
+			&:hover { -gtk-icon-source: url('../assets/menuitem-#{$type}-mixed-hover.svg'); }
+
+			&:insensitive { -gtk-icon-source: url('../assets/menuitem-#{$type}-mixed-insensitive.svg'); }
+		}
+	}
+}
+
+@include exports("checkradio") {
+	* {
+		-GtkCheckButton-indicator-size: 16;
+		-GtkCheckMenuItem-indicator-size: 14;
+	}
+
+	.radio { @include toggle("radio"); }
+
+	.check { @include toggle("checkbox"); }
+
+	GtkIconView.content-view.cell.check {
+		-gtk-icon-source: url("assets/grid-selection-unchecked.svg");
+
+		&:active { -gtk-icon-source: url("assets/grid-selection-checked.svg"); }
+	}
+}
+
+
+/********
+ ! Switch
+*********/
+
+@include exports("switch") {
+	GtkSwitch {
+		padding: 0;
+		border-radius: $roundness;
+		font: bold condensed;
+		outline-offset: -4px;
+
+		&.slider {
+			border: 1px solid border_normal($bg_color);
+			background-color: shade($bg_color, 1.08);
+
+			&:insensitive {
+				border-color: border_insensitive($bg_color);
+				background-color: shade($bg_color, 0.9);
+			}
+		}
+
+		&.trough {
+			border: 1px solid border_normal($bg_color);
+			background-color: shade($bg_color, 0.95);
+			color: $fg_color;
+
+			&:active {
+				border-color: shade($selected_bg_color, 0.9);
+				background-color: $selected_bg_color;
+				color: $selected_fg_color;
+			}
+
+			&:insensitive {
+				border-color: border_insensitive($bg_color);
+				background-color: shade($bg_color, 0.9);
+				color: mix($fg_color, $bg_color, 0.5);
+			}
+		}
+	}
+}
