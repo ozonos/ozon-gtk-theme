@@ -8,7 +8,7 @@
 		border-width: 1px;
 		border-style: solid;
 		border-radius: $roundness;
-		transition: 300ms ease;
+		transition: 150ms ease;
 		outline-color: transparent;
 
 		-GtkWidget-focus-padding: 1;
@@ -75,11 +75,11 @@
 @mixin linked_button($bg) {
 	@extend %linked_button;
 
-	box-shadow: inset -1px 0 shade($bg, 0.95),
+	box-shadow: inset -1px 0 border_normal(rgba(0,0,0,0.1)),
 				0 1px 2px -1px alpha($dark_shadow, .3);
 
 	&:focus, &:hover {
-		box-shadow: inset -1px 0 border_focus(shade($bg, 1.4)),
+		box-shadow: inset -1px 0 border_focus(rgba(0,0,0,0.1)),
 					0 1px 2px -1px alpha($dark_shadow, .5);
 	}
 
@@ -87,7 +87,7 @@
 	&:active:focus, &:active:hover:focus,
 	&:checked, &:checked:hover,
 	&:checked:focus, &:checked:hover:focus {
-		box-shadow: inset -1px 0 shade($bg, 0.85),
+		box-shadow: inset -1px 0 border_active(rgba(0,0,0,0.1)),
 					inset 1px 0 alpha($dark_shadow, .07),
 					inset 0 1px alpha($dark_shadow, .08),
 					inset 0 -1px alpha($dark_shadow, .05);
@@ -130,7 +130,7 @@
 	}
 
 	&, &.flat {
-		@include border(shade($bg, 1.2));
+		@include border(rgba(0,0,0,0.2));
 
 		&:focus, &:hover {
 			@include linear-gradient(shade($bg, 1.2));
