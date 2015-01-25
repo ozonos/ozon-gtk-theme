@@ -39,7 +39,7 @@
                 border: none;
                 background-image: none;
                 background-color: shade($bg_color, 0.95);
-                color: $fg_color;
+                color: $selected_bg_color_alt;
             }
         }
 

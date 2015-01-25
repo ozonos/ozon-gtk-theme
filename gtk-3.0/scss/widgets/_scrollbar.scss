@@ -36,7 +36,7 @@
 
 			&:hover { background-color: mix($bg_color, $fg_color, 0.31); }
 
-			&:active { background-color: $selected_bg_color; }
+			&:active { background-color: $selected_bg_color_alt; }
 
 			&.fine-tune:prelight:active { border: 2px solid transparent; }
 		}
