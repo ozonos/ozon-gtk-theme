@@ -125,6 +125,7 @@
 
 	&:focus, &:hover {
 		@include linear-gradient(shade($bg, 1.2));
+		@include border(rgba(0,0,0,0.2));
 
 		box-shadow: 0 1px 3px -1px alpha($dark_shadow, .5);
 	}
@@ -164,15 +165,10 @@
 	}
 
 	&.flat {
-		&, &:focus, &:hover,
-		&:checked, &:active,
-		&:active:insensitive, &:checked:insensitive,
-		&:insensitive {
-			border-color: transparent;
-			background-color: transparent;
-			background-image: none;
-			box-shadow: none;
-		}
+		border-color: transparent;
+		background-color: transparent;
+		background-image: none;
+		box-shadow: none;
 	}
 
 	&.separator, .separator {
