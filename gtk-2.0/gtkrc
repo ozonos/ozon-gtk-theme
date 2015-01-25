@@ -1,6 +1,6 @@
 # Numix GTK Theme
 
-gtk-color-scheme = "bg_color:#f6f6f6\nfg_color:#555555\nbase_color:#ffffff\ntext_color:#333333\nselected_bg_color:#11aa89\nselected_fg_color:#ffffff\ntooltip_bg_color:#333333\ntooltip_fg_color:#eeeeee\ntitlebar_bg_color:#333333\ntitlebar_fg_color:#eeeeee\nmenubar_bg_color:#f6f6f6\nmenubar_fg_color:#555555\ntoolbar_bg_color:#f6f6f6\ntoolbar_fg_color:#555555\nmenu_bg_color:#ffffff\nmenu_fg_color:#333333\npanel_bg_color:#333333\npanel_fg_color:#eeeeee\nlink_color:#f06860"
+gtk-color-scheme = "bg_color:#f6f6f6\nfg_color:#555555\nbase_color:#ffffff\ntext_color:#333333\nselected_bg_color:#7e57c2\nselected_fg_color:#ffffff\ntooltip_bg_color:#333333\ntooltip_fg_color:#eeeeee\ntitlebar_bg_color:#333333\ntitlebar_fg_color:#eeeeee\nmenubar_bg_color:#f6f6f6\nmenubar_fg_color:#555555\ntoolbar_bg_color:#f6f6f6\ntoolbar_fg_color:#555555\nmenu_bg_color:#ffffff\nmenu_fg_color:#333333\npanel_bg_color:#333333\npanel_fg_color:#eeeeee\nlink_color:#f06860"
 
 # Default Style
 
