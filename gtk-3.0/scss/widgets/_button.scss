@@ -118,7 +118,7 @@
 	@include linear-gradient(shade($bg, 1.2));
 	@extend %button;
 
-	color: $fg;
+	color: alpha($fg, .8);
 	box-shadow: 0 1px 2px -1px alpha($dark_shadow, .3);
 
 	&:insensitive {

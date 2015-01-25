@@ -37,7 +37,7 @@ $modules: () !default;
 }
 
 @function border_insensitive($color) {
-	@return shade($color, ($contrast + .1));
+	@return shade($color, ($contrast + .05));
 }
 
 @mixin linear-gradient($color, $direction: to bottom) {

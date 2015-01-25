@@ -33,16 +33,16 @@ $success_color: #53a93f;
 $warning_color: #f57900;
 $error_color: #cc0000;
 
-$toolbar_bg_color: $bg_color;
+$toolbar_bg_color: alpha($bg_color, .8);
 $toolbar_fg_color: $fg_color;
 
-$titlebar_bg_color: fade-out($bg_color, .2);
+$titlebar_bg_color: alpha($bg_color, .8);
 $titlebar_fg_color: $fg_color;
 
-$menu_bg_color: $base_color;
+$menu_bg_color: alpha($base_color, .8);
 $menu_fg_color: $text_color;
 
-$menubar_bg_color: $bg_color;
+$menubar_bg_color: alpha($bg_color, .8);
 $menubar_fg_color: $fg_color;
 
 $panel_bg_color: $dark_bg_color;
@@ -67,7 +67,7 @@ $wm_icons_unfocused_prelight: $selected_bg_color;
 $wm_icons_unfocused_pressed: shade($selected_bg_color, 0.8);
 
 // widget styles
-$roundness: 3px;
+$roundness: 4px;
 $spacing: 5px;
 $gradient: 0.025;
 $contrast: .8;
