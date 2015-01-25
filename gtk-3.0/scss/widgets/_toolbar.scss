@@ -9,7 +9,7 @@
     @include linear-gradient($bg);
     @include border($bg);
 
-    padding: $spacing + 3px;
+    padding: $spacing + 2px;
     color: $fg;
 
     &:insensitive {
