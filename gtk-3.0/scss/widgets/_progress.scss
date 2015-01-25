@@ -9,8 +9,8 @@
 		font-size: smaller;
 		color: alpha($fg_color, 0.6);
 
-		-GtkProgressBar-min-horizontal-bar-height: 12;
-		-GtkProgressBar-min-vertical-bar-width: 12;
+		-GtkProgressBar-min-horizontal-bar-height: 6;
+		-GtkProgressBar-min-vertical-bar-width: 6;
 
 		&.osd {
 			-GtkProgressBar-xspacing: 0;
