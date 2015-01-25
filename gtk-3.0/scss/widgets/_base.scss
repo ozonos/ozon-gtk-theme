@@ -66,7 +66,7 @@
 }
 
 .background {
-	background-color: $bg_color;
+	background-color: fade-out($bg_color, .3);
 	color: $fg_color;
 
 	&:backdrop {
