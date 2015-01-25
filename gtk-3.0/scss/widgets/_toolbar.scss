@@ -97,14 +97,14 @@
             &:hover, &:hover:focus {
                 background-image: none;
                 background-color: transparent;
-                color: $selected_bg_color;
+                color: $selected_bg_color_alt;
                 box-shadow: none;
             }
 
             &:active, &:active:hover {
                 background-image: none;
                 background-color: transparent;
-                color: shade($selected_bg_color, .9);
+                color: shade($selected_bg_color_alt, .9);
                 box-shadow: none;
             }
 

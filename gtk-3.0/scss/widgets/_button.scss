@@ -116,11 +116,41 @@
 }
 
 @mixin button($bg, $fg) {
-	@include linear-gradient(shade($bg, 1.2));
 	@extend %button;
+	@include linear-gradient(shade($bg, 1.2));
+	@include border(rgba(0,0,0,0.15));
 
 	color: $fg;
 	box-shadow: 0 1px 2px -1px alpha($dark_shadow, .3);
+
+	&:focus, &:hover {
+		@include linear-gradient(shade($bg, 1.2));
+
+		@if $bg == $selected_bg_color {
+			color: $fg;
+		} @else {
+			color: $selected_bg_color_alt;
+		}
+
+		box-shadow: 0 1px 3px -1px alpha($dark_shadow, .5);
+	}
+
+	&:active, &:checked {
+		@include linear-gradient(shade($bg, .9), to top);
+
+		color: $fg;
+		box-shadow: inset 1px 0 alpha($dark_shadow, .07),
+					inset 0 1px alpha($dark_shadow, .08),
+					inset -1px 0 alpha($dark_shadow, .07),
+					inset 0 -1px alpha($dark_shadow, .05);
+	}
+
+	&:active:insensitive, &:checked:insensitive {
+		@include linear-gradient(shade($bg, .8));
+
+		color: $fg;
+		box-shadow: none;
+	}
 
 	&:insensitive {
 		@include linear-gradient(shade($bg, .95));
@@ -129,39 +159,17 @@
 		box-shadow: none;
 	}
 
-	&, &.flat {
-		@include border(rgba(0,0,0,0.2));
-
-		&:focus, &:hover {
-			@include linear-gradient(shade($bg, 1.2));
-
-			color: $selected_bg_color_alt;
-			box-shadow: 0 1px 3px -1px alpha($dark_shadow, .5);
-		}
-
-		&:checked, &:active {
-			@include linear-gradient(shade($bg, .9), to top);
-
-			box-shadow: inset 1px 0 alpha($dark_shadow, .07),
-						inset 0 1px alpha($dark_shadow, .08),
-						inset -1px 0 alpha($dark_shadow, .07),
-						inset 0 -1px alpha($dark_shadow, .05);
-		}
-
-		&:active:insensitive,
-		&:checked:insensitive {
-			@include linear-gradient(shade($bg, .8));
-
+	&.flat {
+		&, &:focus, &:hover,
+		&:checked, &:active,
+		&:active:insensitive, &:checked:insensitive,
+		&:insensitive {
+			color: $fg;
+			border-color: transparent;
+			background-color: transparent;
+			background-image: none;
 			box-shadow: none;
 		}
-	}
-
-	&.flat {
-		color: inherit;
-		border-color: transparent;
-		background-color: transparent;
-		background-image: none;
-		box-shadow: none;
 	}
 
 	&.separator, .separator {

@@ -38,7 +38,7 @@
             &:prelight {
                 border: none;
                 background-image: none;
-                background-color: shade($bg_color, 0.95);
+                background-color: shade($bg_color, 1.05);
                 color: $selected_bg_color_alt;
             }
         }

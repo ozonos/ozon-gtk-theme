@@ -34,9 +34,9 @@
 			border-radius: $roundness;
 			background-color: mix($bg_color, $fg_color, 0.21);
 
-			&:hover { background-color: mix($bg_color, $fg_color, 0.31); }
+			&:hover { background-color: $selected_bg_color_alt; }
 
-			&:active { background-color: $selected_bg_color_alt; }
+			&:active { background-color: shade($selected_bg_color_alt, .9); }
 
 			&.fine-tune:prelight:active { border: 2px solid transparent; }
 		}
