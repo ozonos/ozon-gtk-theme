@@ -6,7 +6,7 @@
 	* {
 		-GtkRange-slider-width: 8;
 		-GtkRange-stepper-spacing: 0;
-		-GtkRange-trough-border: 0;
+		-GtkRange-trough-border: $spacing;
 		-GtkRange-trough-under-steppers: 1;
 		-GtkScrollbar-has-backward-stepper: false;
 		-GtkScrollbar-has-forward-stepper: false;
