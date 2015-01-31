@@ -4,7 +4,7 @@
 
 @include exports("button_extends") {
 	%button {
-		padding: ($spacing - 1px) ($spacing + 1px);
+		padding: $spacing ($spacing + 1px);
 		border-width: 1px;
 		border-style: solid;
 		border-radius: $roundness;
