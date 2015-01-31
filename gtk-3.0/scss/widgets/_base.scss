@@ -66,13 +66,15 @@
 }
 
 .background {
-	background-color: alpha($bg_color, .95);
+	background-color: $bg_color;
 	color: $fg_color;
 
 	&:backdrop {
 		text-shadow: none;
 		icon-shadow: none;
 	}
+
+	&.csd { background-color: alpha($bg_color, .95); }
 }
 
 .gtkstyle-fallback {

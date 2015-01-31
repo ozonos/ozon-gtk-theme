@@ -37,7 +37,7 @@
 
         &.text-button { padding:  $spacing; }
 
-        &.image-button { padding: $spacing ($spacing - 1px) ($spacing - 1px) $spacing; }
+        &.image-button { padding: ($spacing + 1px) ($spacing - 1px) ($spacing + 1px) $spacing; }
     }
 
     GtkSeparatorToolItem, .separator, .separator:insensitive {
