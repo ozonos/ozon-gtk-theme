@@ -183,6 +183,18 @@
 }
 
 @include exports("button") {
+	* {
+		-GtkButton-child-displacement-x: 0;
+		-GtkButton-child-displacement-y: 0;
+		-GtkButton-default-border: 0;
+		-GtkButton-image-spacing: 0;
+		-GtkButton-inner-border: 1;
+		-GtkButton-interior-focus: true;
+		-GtkButtonBox-child-min-height: 24;
+		-GtkButtonBox-child-internal-pad-y: 1;
+		-GtkToolButton-icon-spacing: 6;
+	}
+
 	%close_button {
 		border: 1px solid transparent;
 		background-color: transparent;

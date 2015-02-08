@@ -40,6 +40,11 @@
 *******/
 
 @include exports("menu") {
+    * {
+        -GtkMenu-horizontal-padding: 0;
+        -GtkMenu-vertical-padding: 0;
+    }
+
     GtkTreeMenu, GtkMenuToolButton, GtkComboBox {
         &.menu, .menu {
             background-color: $menu_bg_color;

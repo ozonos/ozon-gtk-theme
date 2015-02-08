@@ -3,6 +3,8 @@
 ****************/
 
 @include exports("view") {
+    * { -GtkTextView-error-underline-color: $error_color; }
+
     .view {
         color: $text_color;
         background-color: $base_color;
@@ -115,6 +117,7 @@
 
 @include exports("treeview") {
     GtkTreeView {
+        -GtkTreeView-expander-size: 8;
         -GtkTreeView-vertical-separator: 0;
 
         outline-offset: -1px;

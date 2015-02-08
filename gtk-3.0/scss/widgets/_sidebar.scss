@@ -3,6 +3,8 @@
 **********/
 
 @include exports("sidebar") {
+    * { -GtkPaned-handle-size: 4; }
+
     .sidebar {
         &, &.view, & .view, & GtkScrolledWindow {
             background-color: $bg_color;
