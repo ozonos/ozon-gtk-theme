@@ -5,20 +5,20 @@
 @mixin toggle($type) {
 	background-image: none;
 
-	-gtk-icon-source: url('../assets/#{$type}-unchecked.svg');
+	-gtk-icon-source: url("../assets/#{$type}-unchecked.png");
 
-	&:insensitive { -gtk-icon-source: url('../assets/#{$type}-unchecked-insensitive.svg'); }
+	&:insensitive { -gtk-icon-source: url("../assets/#{$type}-unchecked-insensitive.png"); }
 
 	&:checked, &:active {
-		-gtk-icon-source: url('../assets/#{$type}-checked.svg');
+		-gtk-icon-source: url("../assets/#{$type}-checked.png");
 
-		&:insensitive { -gtk-icon-source: url('../assets/#{$type}-checked-insensitive.svg'); }
+		&:insensitive { -gtk-icon-source: url("../assets/#{$type}-checked-insensitive.png"); }
 	}
 
 	&:inconsistent {
-		-gtk-icon-source: url('../assets/#{$type}-mixed.svg');
+		-gtk-icon-source: url("../assets/#{$type}-mixed.png");
 
-		&:insensitive { -gtk-icon-source: url('../assets/#{$type}-mixed-insensitive.svg'); }
+		&:insensitive { -gtk-icon-source: url("../assets/#{$type}-mixed-insensitive.png"); }
 	}
 
 	&.menuitem {
@@ -27,19 +27,19 @@
 		&:insensitive { -gtk-icon-source: none; }
 
 		&:checked, &:active {
-			-gtk-icon-source: url('../assets/menuitem-#{$type}-checked.svg');
+			-gtk-icon-source: url("../assets/menuitem-#{$type}-checked.png");
 
-			&:hover { -gtk-icon-source: url('../assets/menuitem-#{$type}-checked-hover.svg'); }
+			&:hover { -gtk-icon-source: url("../assets/menuitem-#{$type}-checked-hover.png"); }
 
-			&:insensitive { -gtk-icon-source: url('../assets/menuitem-#{$type}-checked-insensitive.svg'); }
+			&:insensitive { -gtk-icon-source: url("../assets/menuitem-#{$type}-checked-insensitive.png"); }
 		}
 
 		&:inconsistent {
-			-gtk-icon-source: url('../assets/menuitem-#{$type}-mixed.svg');
+			-gtk-icon-source: url("../assets/menuitem-#{$type}-mixed.png");
 
-			&:hover { -gtk-icon-source: url('../assets/menuitem-#{$type}-mixed-hover.svg'); }
+			&:hover { -gtk-icon-source: url("../assets/menuitem-#{$type}-mixed-hover.png"); }
 
-			&:insensitive { -gtk-icon-source: url('../assets/menuitem-#{$type}-mixed-insensitive.svg'); }
+			&:insensitive { -gtk-icon-source: url("../assets/menuitem-#{$type}-mixed-insensitive.png"); }
 		}
 	}
 }
@@ -47,7 +47,7 @@
 @include exports("checkradio") {
 	* {
 		-GtkCheckButton-indicator-size: 16;
-		-GtkCheckMenuItem-indicator-size: 14;
+		-GtkCheckMenuItem-indicator-size: 16;
 	}
 
 	.radio { @include toggle("radio"); }
@@ -55,9 +55,9 @@
 	.check { @include toggle("checkbox"); }
 
 	GtkIconView.content-view.cell.check {
-		-gtk-icon-source: url("assets/grid-selection-unchecked.svg");
+		-gtk-icon-source: url("assets/grid-selection-unchecked.png");
 
-		&:active { -gtk-icon-source: url("assets/grid-selection-checked.svg"); }
+		&:active { -gtk-icon-source: url("assets/grid-selection-checked.png"); }
 	}
 }
 
