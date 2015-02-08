@@ -60,11 +60,11 @@ $wm_border_unfocused: rgba(0,0,0,0.1);
 $wm_title_focused: mix($titlebar_fg_color, $titlebar_bg_color, 0.1);
 $wm_title_unfocused: mix($titlebar_fg_color, $titlebar_bg_color, 0.4);
 $wm_icons_focused: mix($titlebar_fg_color, $titlebar_bg_color, 0.1);
-$wm_icons_focused_prelight: $selected_bg_color;
-$wm_icons_focused_pressed: shade($selected_bg_color, 0.8);
+$wm_icons_focused_prelight: $selected_bg_color_alt;
+$wm_icons_focused_pressed: shade($selected_bg_color_alt, 0.8);
 $wm_icons_unfocused: mix($titlebar_fg_color, $titlebar_bg_color, 0.4);
-$wm_icons_unfocused_prelight: $selected_bg_color;
-$wm_icons_unfocused_pressed: shade($selected_bg_color, 0.8);
+$wm_icons_unfocused_prelight: $selected_bg_color_alt;
+$wm_icons_unfocused_pressed: shade($selected_bg_color_alt, 0.8);
 
 // widget styles
 $roundness: 4px;
