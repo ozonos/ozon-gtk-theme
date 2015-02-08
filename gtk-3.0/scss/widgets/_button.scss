@@ -152,10 +152,10 @@
 		&:focus, &:hover,
 		&:active:focus, &:active:hover,
 		&:checked:focus, &:checked:hover {
-			@if $bg == $selected_bg_color {
-				color: $fg;
-			} @else {
+			@if type-of($bg) == color and hue($bg) == 0deg {
 				color: $selected_bg_color_alt;
+			} @else {
+				color: $fg;
 			}
 		}
 
