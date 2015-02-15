@@ -1,4 +1,4 @@
-SASS=sass
+SASS=scss
 SCSS_DIR=gtk-3.0/scss
 DIST_DIR=gtk-3.0/dist
 INSTALL_DIR=$(DESTDIR)/usr/share/themes/Ozon
@@ -12,9 +12,9 @@ clean:
 	rm -rf $(DIST_DIR)
 
 install: all
-	mkdir -p $(INSTALL_DIR)
+	install -d -m755 $(INSTALL_DIR)
 
-	for f in *; do cp -a $$f $(INSTALL_DIR)/; done
+	for f in *; do cp -pr $$f $(INSTALL_DIR)/; done
 
 uninstall:
 	rm -rf $(INSTALL_DIR)
