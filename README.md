@@ -25,6 +25,6 @@ GTK+ 3.14
 
 ### Code and license
 
-Report bugs or contribute at [GitHub](https://github.com/shimmerproject/Ozon)
+Report bugs or contribute at [GitHub](https://github.com/ozonos/ozon-gtk-theme)
 
 License: GPL-3.0+
