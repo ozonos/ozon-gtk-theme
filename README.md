@@ -21,7 +21,8 @@ gsettings set org.gnome.desktop.wm.preferences theme "Ozon"
 
 ### Requirements
 
-GTK+ 3.14
+* GTK+ 3.14
+* Murrine engine
 
 ### Code and license
 
