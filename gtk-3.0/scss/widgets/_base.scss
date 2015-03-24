@@ -58,7 +58,7 @@
 		icon-shadow: none;
 	}
 
-	&.csd { background-color: alpha($bg_color, .95); }
+	&.csd { background-color: $bg_color; }
 }
 
 .gtkstyle-fallback {

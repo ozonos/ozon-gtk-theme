@@ -1,5 +1,6 @@
 # Ignore Backup Copies from Text Editor
 *~
+.DS_Store
 
 # Ignore SASS files
 .sass-cache

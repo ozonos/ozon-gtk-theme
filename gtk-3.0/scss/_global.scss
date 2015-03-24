@@ -33,16 +33,16 @@ $success_color: #4caf50;
 $warning_color: #ef6c00;
 $error_color: #f44336;
 
-$toolbar_bg_color: alpha($bg_color, .8);
+$toolbar_bg_color: $bg_color;
 $toolbar_fg_color: $fg_color;
 
-$titlebar_bg_color: alpha($bg_color, .8);
+$titlebar_bg_color: $bg_color;
 $titlebar_fg_color: $fg_color;
 
 $menu_bg_color: $base_color;
 $menu_fg_color: $text_color;
 
-$menubar_bg_color: alpha($bg_color, .8);
+$menubar_bg_color: $bg_color;
 $menubar_fg_color: $fg_color;
 
 $panel_bg_color: $dark_bg_color;
