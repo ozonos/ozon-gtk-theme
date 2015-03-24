@@ -3,7 +3,7 @@
 **********/
 
 $border_strength: if($variant == "dark", .1, 0);
-$shadow_strength: if($variant == "dark", .3, 0);
+$shadow_strength: if($variant == "dark", .1, 0);
 
 @include exports("button_extends") {
 	%button {
