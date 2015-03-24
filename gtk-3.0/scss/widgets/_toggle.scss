@@ -2,23 +2,25 @@
  ! Check and Radio items
 ************************/
 
+$suffix: if($variant == "dark", "-dark", "");
+
 @mixin toggle($type) {
 	background-image: none;
 
-	-gtk-icon-source: url("../assets/#{$type}-unchecked.png");
+	-gtk-icon-source: url("../assets/#{$type}-unchecked#{$suffix}.png");
 
-	&:insensitive { -gtk-icon-source: url("../assets/#{$type}-unchecked-insensitive.png"); }
+	&:insensitive { -gtk-icon-source: url("../assets/#{$type}-unchecked-insensitive#{$suffix}.png"); }
 
 	&:checked, &:active {
-		-gtk-icon-source: url("../assets/#{$type}-checked.png");
+		-gtk-icon-source: url("../assets/#{$type}-checked#{$suffix}.png");
 
-		&:insensitive { -gtk-icon-source: url("../assets/#{$type}-checked-insensitive.png"); }
+		&:insensitive { -gtk-icon-source: url("../assets/#{$type}-checked-insensitive#{$suffix}.png"); }
 	}
 
 	&:inconsistent {
-		-gtk-icon-source: url("../assets/#{$type}-mixed.png");
+		-gtk-icon-source: url("../assets/#{$type}-mixed#{$suffix}.png");
 
-		&:insensitive { -gtk-icon-source: url("../assets/#{$type}-mixed-insensitive.png"); }
+		&:insensitive { -gtk-icon-source: url("../assets/#{$type}-mixed-insensitive#{$suffix}.png"); }
 	}
 
 	&.menuitem {
@@ -55,9 +57,9 @@
 	.check { @include toggle("checkbox"); }
 
 	GtkIconView.content-view.cell.check {
-		-gtk-icon-source: url("assets/grid-selection-unchecked.png");
+		-gtk-icon-source: url("assets/grid-selection-unchecked#{$suffix}.png");
 
-		&:active { -gtk-icon-source: url("assets/grid-selection-checked.png"); }
+		&:active { -gtk-icon-source: url("assets/grid-selection-checked#{$suffix}.png"); }
 	}
 }
 

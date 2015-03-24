@@ -1,19 +1,19 @@
 @import "functions";
 
 // default color scheme
-$bg_color: #f6f6f6;
-$fg_color: #555;
-$base_color: #fff;
-$text_color: #333;
+$bg_color: if($variant == "dark", #313736, #f6f6f6);
+$fg_color: if($variant == "dark", #ccc, #555);
+$base_color: if($variant == "dark", #292e2d, #fff);
+$text_color: if($variant == "dark", #eee, #313736);
 $selected_bg_color: #9575cd;
 $selected_bg_color_alt: #11aa89;
 $selected_fg_color: #fff;
-$tooltip_bg_color: #333;
+$tooltip_bg_color: #313736;
 $tooltip_fg_color: #eee;
 
 // dark colors
-$dark_bg_color: #333;
-$dark_fg_color: #eee;
+$dark_bg_color: #313736;
+$dark_fg_color: #ccc;
 
 // shadows
 $dark_shadow: #000;

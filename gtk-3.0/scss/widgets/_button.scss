@@ -2,6 +2,8 @@
  ! Buttons
 **********/
 
+$shadow_strength: if($variant == "dark", .3, 0);
+
 @include exports("button_extends") {
 	%button {
 		padding: $spacing ($spacing + 1px);
@@ -76,11 +78,11 @@
 	@extend %linked_button;
 
 	box-shadow: inset -1px 0 border_normal(rgba(0,0,0,0.12)),
-				0 1px 2px -1px alpha($dark_shadow, .12);
+				0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength);
 
 	&:focus, &:hover {
 		box-shadow: inset -1px 0 border_focus(rgba(0,0,0,0.12)),
-					0 1px 2px -1px alpha($dark_shadow, .32);
+					0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength);
 	}
 
 	&:active, &:active:hover,
@@ -94,9 +96,9 @@
 
 	&:insensitive { box-shadow: inset -1px 0 shade($bg, 0.8); }
 
-	&:last-child, &:only-child { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12); }
+	&:last-child, &:only-child { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength); }
 
-	&:last-child:hover, &:only-child:hover { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32); }
+	&:last-child:hover, &:only-child:hover { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength); }
 
 	&:insensitive:last-child, &:insensitive:only-child,
 	&:active:insensitive:last-child, &:active:insensitive:only-child,
@@ -122,7 +124,7 @@
 	@include border(rgba(0,0,0,0.12));
 
 	color: $fg;
-	box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12);
+	box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength);
 
 	&.flat {
 		border-color: transparent;
@@ -136,7 +138,7 @@
 			@include linear-gradient(shade($bg, 1.2));
 			@include border(rgba(0,0,0,0.2));
 
-			box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32);
+			box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength);
 		}
 
 		&:active, &:checked {
