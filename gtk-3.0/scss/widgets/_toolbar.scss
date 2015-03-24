@@ -55,6 +55,11 @@
         @include toolbar($bg_color, $fg_color);
 
         border-style: none;
+
+        &.inline-toolbar {
+            background-image: none;
+            background-color: transparent;
+        }
     }
 
     .header-bar {
