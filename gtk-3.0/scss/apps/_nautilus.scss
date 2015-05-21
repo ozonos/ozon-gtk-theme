@@ -23,7 +23,7 @@
 
         .sidebar .frame { border: none; }
 
-        > GtkGrid > .pane-separator {
+        GtkPaned {
             border-width: 0 1px 0 0;
             border-style: solid;
 
