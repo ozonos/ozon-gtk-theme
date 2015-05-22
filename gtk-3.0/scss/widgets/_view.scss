@@ -94,9 +94,6 @@
         }
     }
 
-    /* used by GtkScrolledWindow, shown when content is touch-dragged past boundaries. */
-    .overshoot { background-color: alpha($selected_bg_color, 0.3); }
-
     GdMainIconView.content-view { -GdMainIconView-icon-size: 40; }
 
     /* this will get overridden by .view, needed by gedit line numbers */
