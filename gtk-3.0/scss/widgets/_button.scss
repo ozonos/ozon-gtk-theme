@@ -2,9 +2,6 @@
  ! Buttons
 **********/
 
-$border_strength: if($variant == "dark", .1, 0);
-$shadow_strength: if($variant == "dark", .1, 0);
-
 @include exports("button_extends") {
 	%button {
 		padding: $spacing ($spacing + 2px);
@@ -76,6 +73,9 @@ $shadow_strength: if($variant == "dark", .1, 0);
 }
 
 @mixin linked_button($bg) {
+    $border_strength: if(lightness($bg) > 50, 0, .1);
+    $shadow_strength: if(lightness($bg) > 50, 0, .1);
+
 	@extend %linked_button;
 
 	box-shadow: inset -1px 0 border_normal(rgba(0,0,0,.12 + $border_strength)),
@@ -120,6 +120,9 @@ $shadow_strength: if($variant == "dark", .1, 0);
 }
 
 @mixin button($bg, $fg) {
+    $border_strength: if(lightness($bg) > 50, 0, .1);
+    $shadow_strength: if(lightness($bg) > 50, 0, .1);
+
 	@extend %button;
 	@include linear-gradient(shade($bg, 1.2));
 	@include border(rgba(0,0,0,.12 + $border_strength));
@@ -128,8 +131,8 @@ $shadow_strength: if($variant == "dark", .1, 0);
 	box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength);
 
 	&.flat {
-		border-color: transparent;
-		background-color: transparent;
+		border-color: alpha($bg, 1);
+		background-color: alpha($bg, 1);
 		background-image: none;
 		box-shadow: none;
 	}
