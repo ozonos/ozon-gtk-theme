@@ -6,7 +6,7 @@
     * {
         -GtkRange-slider-width: 8;
         -GtkRange-stepper-spacing: 0;
-        -GtkRange-trough-border: $spacing;
+        -GtkRange-trough-border: 2;
         -GtkRange-trough-under-steppers: 1;
         -GtkScrollbar-has-backward-stepper: false;
         -GtkScrollbar-has-forward-stepper: false;
@@ -16,7 +16,7 @@
     }
 
     .scrollbar {
-        border: none;
+        border: 0;
         padding: 0;
 
         &.button {
@@ -25,32 +25,55 @@
                 border-radius: 0;
                 background-color: transparent;
                 background-image: none;
-                color: shade($bg_color, 0.6);
+                color: alpha($fg_color, 0.5);
             }
         }
 
         &.slider, &.slider.vertical {
-            border: none;
+            border: 0;
             border-radius: $roundness;
-            background-color: mix($bg_color, $fg_color, 0.21);
+            background-color: shade($bg_color, 0.5);
 
-            &:hover { background-color: $selected_bg_color_alt; }
+            &:hover { background-color: shade($bg_color, 0.3); }
 
-            &:active { background-color: shade($selected_bg_color_alt, .9); }
+            &:active { background-color: $selected_bg_color_alt; }
 
             &.fine-tune:prelight:active { border: 2px solid transparent; }
+        }
+
+        // overlay scrolling indicator
+        &.overlay-indicator {
+            &:not(.dragging):not(.hovering) {
+                opacity: 0.5;
+
+                -GtkRange-slider-width: 4px;
+
+                .slider {
+                    margin: 0;
+                    background-color: $fg_color;
+                    background-clip: padding-box;
+                }
+
+                .trough {
+                    border-style: none;
+                    background-color: transparent;
+                }
+            }
+
+            &.dragging, &.hovering { opacity: 0.7; }
         }
     }
 
     .scrollbars-junction,
+    .scrollbars-junction.frame,
     .scrollbar.trough {
-        border: none;
+        border: 0;
         border-radius: 0;
         background-color: $bg_color;
         background-image: none;
     }
 
-    /* overlay scrollbar */
+    // ubuntu overlay scrollbars
     OsThumb, OsScrollbar {
         color: shade($bg_color, 0.7);
 
