@@ -1,15 +1,21 @@
 SASS=scss
-SCSS_DIR=gtk-3.0/scss
-DIST_DIR=gtk-3.0/dist
+GLIB_COMPILE_RESOURCES=glib-compile-resources
+RES_DIR=gtk-3.0
+SCSS_DIR=$(RES_DIR)/scss
+DIST_DIR=$(RES_DIR)/dist
 INSTALL_DIR=$(DESTDIR)/usr/share/themes/Ozon
+
+all: gresource
 
 css:
 	$(SASS) --sourcemap=none --update $(SCSS_DIR):$(DIST_DIR)
 
-all: css
+gresource: css
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(RES_DIR) $(RES_DIR)/gtk.gresource.xml
 
 clean:
 	rm -rf $(DIST_DIR)
+	rm -f $(RES_DIR)/gtk.gresource
 
 install: all
 	install -d -m755 $(INSTALL_DIR)
@@ -19,5 +25,13 @@ install: all
 uninstall:
 	rm -rf $(INSTALL_DIR)
 
+.PHONY: all
 .PHONY: css
+.PHONY: gresource
+.PHONY: clean
+.PHONY: install
+.PHONY: uninstall
+
+.DEFAULT_GOAL := all
+
 # vim: set ts=4 sw=4 tw=0 noet :
