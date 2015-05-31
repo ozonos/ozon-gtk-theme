@@ -172,8 +172,12 @@
             box-shadow: none;
         }
 
-        &:insensitive {
-            @include linear-gradient(shade($bg, .95));
+        &:insensitive:insensitive {
+            @if (lightness($bg) > 50) {
+                @include linear-gradient(shade($bg, .95));
+            } @else {
+                @include linear-gradient(alpha($bg, .3));
+            }
 
             color: mix($bg, $fg, .5);
             box-shadow: none;
