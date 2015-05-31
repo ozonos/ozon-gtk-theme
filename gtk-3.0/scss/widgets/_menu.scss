@@ -196,9 +196,10 @@
             }
         }
 
-        .list {
+        .view, .list {
             background-color: transparent;
             background-image: none;
+            color: $menu_fg_color;
         }
 
         .list-row {
