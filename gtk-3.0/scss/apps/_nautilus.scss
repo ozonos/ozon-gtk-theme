@@ -45,11 +45,6 @@
     }
 
     NautilusQueryEditor {
-        .search-bar.toolbar {
-            border-top-width: 0;
-            border-bottom-width: 0;
-        }
-
         .toolbar {
             padding-top: $spacing - 1px;
             padding-bottom: $spacing - 2px;
@@ -66,7 +61,10 @@
             }
 
             &, &.search-bar {
-                &:only-child {
+                border-top-width: 0;
+                border-bottom-width: 0;
+
+                &:last-child, &:only-child {
                     border-bottom-width: 1px;
                     border-bottom-color: border_normal($toolbar_bg_color);
                 }
