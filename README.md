@@ -4,10 +4,18 @@ Official GTK theme for [Ozon OS](https://github.com/ozonos/).
 
 First, you need to compile the theme using the [Sass](http://sass-lang.com/) compiler.
 
-To install Sass, install ruby and the gem command using your distro's package manager. Then switch to the cloned directory and, run the following in Terminal.
+To install Sass, install ruby and the gem command using your distro's package manager. Then install `sass` with the `gem` command,
+
+`gem install sass`
+
+You'll also need the following commands in your path to generate the gresource binary. Install them using your distro's package manager.
+
+* `glib-compile-schemas`
+* `gdk-pixbuf-pixdata`
+
+After installing all the dependencies, switch to the cloned directory and, run the following in Terminal,
 
 ```
-gem install sass
 make
 sudo make install
 ```
