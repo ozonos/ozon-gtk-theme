@@ -117,18 +117,18 @@
             color: shade($menu_bg_color, ($contrast + .1));
         }
 
-        &.button {
+        &.button, &.button.flat {
             &, &:focus, &:active, &:insensitive, &:active:insensitive {
                 background-color: transparent;
                 background-image: none;
-                border: none;
+                border: 0;
                 box-shadow: none;
                 color: currentColor;
             }
 
             &:hover, &:focus:hover, &:active:hover, &:selected {
-                background-color: $selected_bg_color;
                 background-image: none;
+                background-color: $selected_bg_color;
                 color: $selected_fg_color;
             }
         }
