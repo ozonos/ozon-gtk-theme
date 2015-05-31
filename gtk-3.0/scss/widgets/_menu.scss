@@ -175,7 +175,7 @@
         background-color: $menu_bg_color;
         background-image: none;
         color: $menu_fg_color;
-        box-shadow: 0 2px 3px alpha(black, .5);
+        box-shadow: 0 3px 6px alpha(black, .16);
 
         &.background {
             background-image: none;
